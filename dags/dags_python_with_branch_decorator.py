@@ -18,7 +18,7 @@ with DAG(
         if selected_item == 'A':
             return 'task_a'
         elif selected_item in ['B', 'C']:
-            return ['tast_b', 'task_c']
+            return ['task_b', 'task_c']
     
     def common_func(**kwargs):
         print(kwargs['selected'])
@@ -42,4 +42,3 @@ with DAG(
     )   
 
     select_random() >> [task_a, task_b, task_c]
-    
