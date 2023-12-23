@@ -12,7 +12,7 @@ with DAG(
 ) as dag:
     external_task_sensor_a = ExternalTaskSensor(
         task_id='external_task_sensor_a',
-        external_dags_id='dags_branch_python_operator',
+        external_dag_id='dags_branch_python_operator',
         external_task_id='task_a',
         allowed_states=[State.SKIPPED],
         execution_delta=timedelta(hours=6),
@@ -21,7 +21,7 @@ with DAG(
 
     external_task_sensor_b = ExternalTaskSensor(
         task_id='external_task_sensor_b',
-        external_dags_id='dags_branch_python_operator',
+        external_dag_id='dags_branch_python_operator',
         external_task_id='task_b',
         allowed_states=[State.SKIPPED],
         execution_delta=timedelta(hours=6),
@@ -30,7 +30,7 @@ with DAG(
 
     external_task_sensor_c = ExternalTaskSensor(
         task_id='external_task_sensor_c',
-        external_dags_id='dags_branch_python_operator',
+        external_dag_id='dags_branch_python_operator',
         external_task_id='task_c',
         allowed_states=[State.SUCCESS],
         execution_delta=timedelta(hours=6),
