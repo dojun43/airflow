@@ -16,7 +16,7 @@ with DAG(
         poke_interval=600,
         mode='reschedule'
     )
-
+    
     tv_corona19_vaccine_stat_new_sensor = SeoulApiDateSensor(
         task_id='tv_corona19_vaccine_stat_new_sensor',
         dataset_nm='tvCorona19VaccinestatNew',
