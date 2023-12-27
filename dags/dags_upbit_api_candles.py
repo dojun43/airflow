@@ -11,3 +11,5 @@ with DAG(
     t1 = UpbitApiToCsvOperator(
         task_id='t1'
     )
+
+    t1
