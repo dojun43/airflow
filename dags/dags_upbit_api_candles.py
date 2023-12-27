@@ -8,6 +8,6 @@ with DAG(
     start_date=pendulum.datetime(2023,12,1, tz='Asia/Seoul'),
     catchup=False
 ) as dag:
-        t1 = UpbitApiToCsvOperator(
+    t1 = UpbitApiToCsvOperator(
         task_id='t1'
     )
