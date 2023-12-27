@@ -2,7 +2,7 @@ from airflow.models.baseoperator import BaseOperator
 from airflow.hooks.base import BaseHook
 import pandas as pd 
 
-class SeoulApiToCsvOperator(BaseOperator):
+class UpbitApiToCsvOperator(BaseOperator):
     template_fields = ('endpoint', 'path','file_name','base_dt')
 
     def __init__(self, **kwargs):
