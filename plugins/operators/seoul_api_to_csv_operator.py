@@ -23,17 +23,13 @@ class SeoulApiToCsvOperator(BaseOperator):
         start_row = 1
         end_row = 1000
 
-        while True:
-            self.log.info(f'시작:{start_row}')
-            self.log.info(f'끝:{end_row}')
-            row_df = self._call_api(self.base_url, start_row, end_row)
-            total_row_df = pd.concat([total_row_df, row_df])
-            self.log.info(f'len:{len(row_df)}')
-            if len(row_df) < 1000:
-                break
-            else:
-                start_row = end_row + 1
-                end_row += 1000
+
+        self.log.info(f'시작:{start_row}')
+        self.log.info(f'끝:{end_row}')
+        row_df = self._call_api(self.base_url, start_row, end_row)
+        total_row_df = pd.concat([total_row_df, row_df])
+        self.log.info(f'len:{len(row_df)}')
+
         
         if not os.path.exists(self.path):
             os.system(f'mkdir -p {self.path}')
