@@ -3,7 +3,7 @@ from airflow.hooks.base import BaseHook
 import pandas as pd 
 
 class UpbitApiToCsvOperator(BaseOperator):
-    template_fields = ('endpoint', 'path','file_name','base_dt')
+    template_fields = ()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
